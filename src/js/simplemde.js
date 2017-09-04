@@ -1,17 +1,21 @@
 /*global require,module*/
 'use strict';
-var CodeMirror = require('codemirror');
-require('codemirror/addon/edit/continuelist.js');
-require('./codemirror/tablist');
-require('codemirror/addon/display/fullscreen.js');
-require('codemirror/mode/markdown/markdown.js');
-require('codemirror/addon/mode/overlay.js');
-require('codemirror/addon/display/placeholder.js');
-require('codemirror/addon/selection/mark-selection.js');
-require('codemirror/mode/gfm/gfm.js');
-require('codemirror/mode/xml/xml.js');
-var CodeMirrorSpellChecker = require('codemirror-spell-checker');
-var marked = require('marked');
+
+var tabList = require('./codemirror/tablist');
+
+// the passed in codeMirrorInstance should have these addons enabled
+// require('codemirror/addon/edit/continuelist.js');
+// require('codemirror/addon/display/fullscreen.js');
+// require('codemirror/mode/markdown/markdown.js');
+// require('codemirror/addon/mode/overlay.js');
+// require('codemirror/addon/display/placeholder.js');
+// require('codemirror/addon/selection/mark-selection.js');
+// require('codemirror/mode/gfm/gfm.js');
+// require('codemirror/mode/xml/xml.js');
+
+var CodeMirror;
+var CodeMirrorSpellChecker;
+var marked;
 
 // Some variables
 var isMac = /Mac/.test(navigator.platform);
@@ -2123,4 +2127,18 @@ SimpleMDE.prototype.toTextArea = function() {
   }
 };
 
-module.exports = SimpleMDE;
+// init must be called before using SimpleMDE
+var init = function(options) {
+  CodeMirror = options.codeMirrorInstance;
+  marked = options.marked;
+  CodeMirrorSpellChecker = options.codeMirrorSpellChecker;
+
+  tabList(CodeMirror);
+
+  console.log('initing!', options);
+};
+
+module.exports = {
+  SimpleMDE: SimpleMDE,
+  init: init,
+};

@@ -15,11 +15,6 @@
   "bugs": {
     "url": "https://github.com/sparksuite/simplemde-markdown-editor/issues"
   },
-  "peerDependencies": {
-    "codemirror": "*",
-    "codemirror-spell-checker": "*",
-    "marked": "*"
-  },
   "devDependencies": {
     "browserify": "*",
     "debug": "*",
