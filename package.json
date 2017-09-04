@@ -1,14 +1,9 @@
 {
-  "name": "simplemde",
-  "version": "1.11.2",
-  "description": "A simple, beautiful, and embeddable JavaScript Markdown editor. Features autosaving and spell checking.",
-  "keywords": [
-    "embeddable",
-    "markdown",
-    "editor",
-    "javascript",
-    "wysiwyg"
-  ],
+  "name": "@stoplight/simplemde",
+  "version": "1.12.0",
+  "description":
+    "A simple, beautiful, and embeddable JavaScript Markdown editor. Features autosaving and spell checking.",
+  "keywords": ["embeddable", "markdown", "editor", "javascript", "wysiwyg"],
   "homepage": "https://github.com/sparksuite/simplemde-markdown-editor",
   "main": "./src/js/simplemde.js",
   "license": "MIT",
@@ -20,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/sparksuite/simplemde-markdown-editor/issues"
   },
-  "dependencies": {
+  "peerDependencies": {
     "codemirror": "*",
     "codemirror-spell-checker": "*",
     "marked": "*"
