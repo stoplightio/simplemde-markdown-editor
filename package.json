@@ -1,6 +1,6 @@
 {
   "name": "@stoplight/simplemde",
-  "version": "1.12.0",
+  "version": "2.0.0",
   "description":
     "A simple, beautiful, and embeddable JavaScript Markdown editor. Features autosaving and spell checking.",
   "keywords": ["embeddable", "markdown", "editor", "javascript", "wysiwyg"],
